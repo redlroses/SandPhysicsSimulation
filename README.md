@@ -2,6 +2,6 @@
 
 Simulation of falling sand based on shaders in Unity
 
-You can see the preview in the preview.png
+You can see the preview in the preview.jpeg
 
-*The .exe file is in the archive SandPhysicsSimulation.exe.7z*
+*The .exe file is in the archive SandPhysicsSimulation.7z*
