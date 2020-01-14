@@ -8,7 +8,7 @@ public class GradientUIController : MonoBehaviour
     public RawImage RawImage1;
     public RawImage RawImage2;
 
-    private bool isGrad = false;
+    private bool isGrad = true;
     private GradientColorKey[] colorKey;
     private GradientAlphaKey[] alphaKey;
 

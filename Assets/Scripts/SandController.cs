@@ -14,7 +14,7 @@ public class SandController : MonoBehaviour
 
     private int sandFallSpeed;
     private float gradientSmoothTime;
-    private bool isGrad;
+    private bool isGrad = true;
     private Color color;
     private Camera mainCamera;
     private Vector3 mousPos;

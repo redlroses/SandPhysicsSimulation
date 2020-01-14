@@ -53,7 +53,7 @@ public class LangText : MonoBehaviour
             case "dropdownType":
                 Dropdown dropdown = GetComponent<Dropdown>();
                 Text lable = dropdown.GetComponentInChildren<Text>();
-                if (dropdown.value == 1)
+                if (dropdown.value == 0)
                 {
                     lable.text = lang.random;
                 }
@@ -61,8 +61,8 @@ public class LangText : MonoBehaviour
                 {
                     lable.text = lang.smooth;
                 }
-                dropdown.options[0].text = lang.smooth;
-                dropdown.options[1].text = lang.random;
+                dropdown.options[1].text = lang.smooth;
+                dropdown.options[0].text = lang.random;
                 break;
             default:
                 text.text = "ERROR";
