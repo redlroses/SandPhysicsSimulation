@@ -1,0 +1,12 @@
+{
+  "brush": "Brush size",
+  "gravity": "Gravity",
+  "info": "LBM - paint RBM - delete",
+  "gradient": "Gradient",
+  "color1": "Color",
+  "color2": "Color 2",
+  "smoothGrad": "Smoothness gradient",
+  "type": "Gradient type",
+  "smooth": "Smooth",
+  "random": "Random"
+}
