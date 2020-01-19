@@ -8,24 +8,24 @@ public class SandController : MonoBehaviour
     public Gradient SandColor;
     public enum GradType {Random, Smooth}
     public GradType GradientType = GradType.Smooth;
-    public float radius = 1f;
+    public float radius;
     public RawImage img;
     public GradientUIController otherGrad;
 
+    [SerializeField] Camera sandCamera;
     private int sandFallSpeed;
     private float gradientSmoothTime;
     private bool isGrad = true;
     private Color color;
-    private Camera mainCamera;
     private Vector3 mousPos;
     private Color deleteColor; 
 
     private void Start()
     {
-        sandFallSpeed = 1; ;
+        radius = 1f;
+        sandFallSpeed = 20;
         gradientSmoothTime = 1f;
         Texture.Initialize();
-        mainCamera = Camera.main;
         deleteColor = new Color(0, 0, 0, 0);
     }
 
@@ -37,8 +37,8 @@ public class SandController : MonoBehaviour
         {
             SandEffectMaterial.SetFloat("_radius", radius / 100);
             SandEffectMaterial.SetInt("_del", 0);
-            mousPos = new Vector3 (Input.mousePosition.x * 4 / 3, Input.mousePosition.y, 0);
-            SandEffectMaterial.SetVector("_DrawPosition", mainCamera.ScreenToViewportPoint(mousPos));
+            mousPos = new Vector3 (Input.mousePosition.x * 1, Input.mousePosition.y, 0);
+            SandEffectMaterial.SetVector("_DrawPosition", sandCamera.ScreenToViewportPoint(mousPos));
 
             if (isGrad)
             {
@@ -70,8 +70,8 @@ public class SandController : MonoBehaviour
         {
             SandEffectMaterial.SetFloat("_radius", radius / 100);
             SandEffectMaterial.SetInt("_del", 1);
-            mousPos = new Vector3(Input.mousePosition.x * 4 / 3, Input.mousePosition.y, 0);
-            SandEffectMaterial.SetVector("_DrawPosition", mainCamera.ScreenToViewportPoint(mousPos));
+            mousPos = new Vector3(Input.mousePosition.x * 1, Input.mousePosition.y, 0);
+            SandEffectMaterial.SetVector("_DrawPosition", sandCamera.ScreenToViewportPoint(mousPos));
             SandEffectMaterial.SetVector("_DrawColor", deleteColor);
         }
         else 
