@@ -33,7 +33,7 @@ public class SandController : MonoBehaviour
     {
         Texture.Update(sandFallSpeed);
         
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && sandCamera.ScreenToViewportPoint(Input.mousePosition).x < 1f)
         {
             SandEffectMaterial.SetFloat("_radius", radius / 100);
             SandEffectMaterial.SetInt("_del", 0);
@@ -66,7 +66,7 @@ public class SandController : MonoBehaviour
 
             SandEffectMaterial.SetVector("_DrawColor", color);
         }
-        else if (Input.GetMouseButton(1))
+        else if (Input.GetMouseButton(1) && sandCamera.ScreenToViewportPoint(Input.mousePosition).x < 1f)
         {
             SandEffectMaterial.SetFloat("_radius", radius / 100);
             SandEffectMaterial.SetInt("_del", 1);
